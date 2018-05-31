@@ -1,0 +1,184 @@
+RewriteEngine on
+
+RewriteRule ^views/dashboard$ dashboard.php
+RewriteRule ^views/dashboard/([0-9]+)/([A-Za-z0-9]+) views/dashboard.php?leave_id=$1&type=$2
+
+RewriteRule ^views/filestatus$ filestatus.php
+RewriteRule ^views/filestatus/([0-9]+)/([0-9]+) views/filestatus.php?visa_id=$1&client_id=$2
+
+RewriteRule ^views/managevisitorvisa$ managevisitorvisa.php
+RewriteRule ^views/managevisitorvisa/([0-9]+) views/managevisitorvisa.php?client_id=$1
+
+RewriteRule ^views/managestudentvisa$ managestudentvisa.php
+RewriteRule ^views/managestudentvisa/([0-9]+) views/managestudentvisa.php?client_id=$1
+
+RewriteRule ^views/usermanager$ usermanager.php
+RewriteRule ^views/usermanager/([0-9]+) views/usermanager.php?login_id=$1
+
+RewriteRule ^views/accounts$ accounts.php
+RewriteRule ^views/accounts/([0-9]+) views/accounts.php?master_id=$1
+
+RewriteRule ^views/manageaccount$ manageaccount.php
+RewriteRule ^views/manageaccount/([0-9]+) views/manageaccount.php?master_id=$1
+
+RewriteRule ^views/managecurrency$ managecurrency.php
+RewriteRule ^views/managecurrency/([0-9]+) views/managecurrency.php?master_id=$1
+
+RewriteRule ^views/currency$ currency.php
+RewriteRule ^views/currency/([0-9]+) views/currency.php?master_id=$1
+
+RewriteRule ^views/workcomplete$ workcomplete.php
+RewriteRule ^views/workcomplete/([0-9]+) views/workcomplete.php?master_id=$1
+
+RewriteRule ^views/manageworkcomplete$ manageworkcomplete.php
+RewriteRule ^views/manageworkcomplete/([0-9]+) views/manageworkcomplete.php?master_id=$1
+
+RewriteRule ^views/managemedium$ managemedium.php
+RewriteRule ^views/managemedium/([0-9]+) views/managemedium.php?master_id=$1
+
+RewriteRule ^views/medium$ medium.php
+RewriteRule ^views/medium/([0-9]+) views/medium.php?master_id=$1
+
+RewriteRule ^views/events$ events.php
+RewriteRule ^views/events/([0-9]+) views/events.php?master_id=$1
+
+RewriteRule ^views/migration$ migration.php
+RewriteRule ^views/migration/([0-9]+) views/migration.php?master_id=$1
+
+RewriteRule ^views/managemigration$ managemigration.php
+RewriteRule ^views/managemigration/([0-9]+) views/managemigration.php?master_id=$1
+
+RewriteRule ^views/manageevent$ manageevent.php
+RewriteRule ^views/manageevent/([0-9]+) views/manageevent.php?master_id=$1
+
+RewriteRule ^views/manageclient$ manageclient.php
+RewriteRule ^views/manageclient/([0-9]+) views/manageclient.php?client_id=$1
+
+RewriteRule ^views/managepaymentstage$ managepaymentstage.php
+RewriteRule ^views/managepaymentstage/([0-9]+) views/managepaymentstage.php?master_id=$1
+
+RewriteRule ^views/paymentstage$ paymentstage.php
+RewriteRule ^views/paymentstage/([0-9]+) views/paymentstage.php?master_id=$1
+
+RewriteRule ^views/managetypes$ managetypes.php
+RewriteRule ^views/managetypes/([0-9]+) views/managetypes.php?master_id=$1
+
+RewriteRule ^views/visitortypes$ visitortypes.php
+RewriteRule ^views/visitortypes/([0-9]+) views/visitortypes.php?master_id=$1
+
+RewriteRule ^views/registrationmanager$ registrationmanager.php
+RewriteRule ^views/registrationmanager/([0-9]+) views/registrationmanager.php?reg_id=$1
+
+RewriteRule ^views/inquirymanager$ inquirymanager.php
+RewriteRule ^views/inquirymanager/([0-9]+) views/inquirymanager.php?login_id=$1
+
+RewriteRule ^views/appointmentpurpose$ appointmentpurpose.php
+RewriteRule ^views/appointmentpurpose/([0-9]+) views/appointmentpurpose.php?master_id=$1
+
+RewriteRule ^views/appointmentdetail$ appointmentdetail.php
+RewriteRule ^views/appointmentdetail/([0-9]+) views/appointmentdetail.php?app_id=$1
+
+RewriteRule ^views/appointment$ appointment.php
+RewriteRule ^views/appointment/([0-9]+) views/appointment.php?app_id=$1
+
+RewriteRule ^views/appointments$ appointments.php
+RewriteRule ^views/appointments/([0-9]+) views/appointments.php?app_id=$1
+
+RewriteRule ^views/managepurpose$ managepurpose.php
+RewriteRule ^views/managepurpose/([0-9]+) views/managepurpose.php?master_id=$1
+
+RewriteRule ^views/maritalstatus$ maritalstatus.php
+RewriteRule ^views/maritalstatus/([0-9]+) views/maritalstatus.php?master_id=$1
+
+RewriteRule ^views/proficiency$ proficiency.php
+RewriteRule ^views/proficiency/([0-9]+) views/proficiency.php?master_id=$1
+
+RewriteRule ^views/doctypes$ doctypes.php
+RewriteRule ^views/doctypes/([0-9]+) views/doctypes.php?master_id=$1
+
+RewriteRule ^views/managedoctypes$ managedoctypes.php
+RewriteRule ^views/managedoctypes/([0-9]+) views/managedoctypes.php?master_id=$1
+
+RewriteRule ^views/manageproficiency$ manageproficiency.php
+RewriteRule ^views/manageproficiency/([0-9]+) views/manageproficiency.php?master_id=$1
+
+RewriteRule ^views/managevisadoc$ managevisadoc.php
+RewriteRule ^views/managevisadoc/([0-9]+) views/managevisadoc.php?master_id=$1
+
+RewriteRule ^views/inquiry$ inquiry.php
+RewriteRule ^views/inquiry/([0-9]+)/([A-Za-z0-9]+) views/inquiry.php?inquiry_id=$1&tb_type=$2
+
+RewriteRule ^views/viewclientdetails$ viewclientdetails.php
+RewriteRule ^views/viewclientdetails/([0-9]+)/([A-Za-z0-9]+) views/viewclientdetails.php?inquiry_id=$1&tb_type=$2
+
+RewriteRule ^views/viewinquiry$ viewinquiry.php
+RewriteRule ^views/viewinquiry/([0-9]+)/([A-Za-z0-9]+) views/viewinquiry.php?inquiry_id=$1&tb_type=$2
+
+RewriteRule ^views/viewdetails$ viewdetails.php
+RewriteRule ^views/viewdetails/([0-9]+) views/viewdetails.php?inquiry_id=$1
+
+RewriteRule ^views/business$ business.php
+RewriteRule ^views/business/([0-9]+) views/business.php?master_id=$1
+
+RewriteRule ^views/immigration$ immigration.php
+RewriteRule ^views/immigration/([0-9]+) views/immigration.php?master_id=$1
+
+RewriteRule ^views/relationship$ relationship.php
+RewriteRule ^views/relationship/([0-9]+) views/relationship.php?master_id=$1
+
+RewriteRule ^views/exammaster$ exammaster.php
+RewriteRule ^views/exammaster/([0-9]+) views/exammaster.php?master_id=$1
+
+RewriteRule ^views/managemaritalstatus$ managemaritalstatus.php
+RewriteRule ^views/managemaritalstatus/([0-9]+) views/managemaritalstatus.php?master_id=$1
+
+RewriteRule ^views/visamaster$ visamaster.php
+RewriteRule ^views/visamaster/([0-9]+) views/visamaster.php?master_id=$1
+
+RewriteRule ^views/references$ references.php
+RewriteRule ^views/references/([0-9]+) views/references.php?master_id=$1
+
+RewriteRule ^views/managereference$ managereference.php
+RewriteRule ^views/managereference/([0-9]+) views/managereference.php?master_id=$1
+
+RewriteRule ^views/subagent$ subagent.php
+RewriteRule ^views/subagent/([0-9]+) views/subagent.php?master_id=$1
+
+RewriteRule ^views/managesubagent$ managesubagent.php
+RewriteRule ^views/managesubagent/([0-9]+) views/managesubagent.php?master_id=$1
+
+RewriteRule ^views/managebusiness$ managebusiness.php
+RewriteRule ^views/managebusiness/([0-9]+) views/managebusiness.php?master_id=$1
+
+RewriteRule ^views/manageimmigration$ manageimmigration.php
+RewriteRule ^views/manageimmigration/([0-9]+) views/manageimmigration.php?master_id=$1
+
+RewriteRule ^views/managerelationship$ managerelationship.php
+RewriteRule ^views/managerelationship/([0-9]+) views/managerelationship.php?master_id=$1
+
+RewriteRule ^views/manageexam$ manageexam.php
+RewriteRule ^views/manageexam/([0-9]+) views/manageexam.php?master_id=$1
+
+RewriteRule ^views/managevisa$ managevisa.php
+RewriteRule ^views/managevisa/([0-9]+) views/managevisa.php?master_id=$1
+
+RewriteRule ^views/viewuserdetail$ viewuserdetail.php
+RewriteRule ^views/viewuserdetail/([0-9]+) views/viewuserdetail.php?login_id=$1
+
+RewriteRule ^views/manageuser$ manageuser.php
+RewriteRule ^views/manageuser/([0-9]+) views/manageuser.php?login_id=$1
+
+RewriteRule ^views/verify_email$ verify_email.php
+RewriteRule ^views/verify_email/([0-9]+) views/verify_email.php?login_id=$1
+
+RewriteCond %{THE_REQUEST} ^GET\ /views/(.*)
+RewriteRule ^views/(.*) views/$1.php [L,R=301]
+
+#Remove extension from URL.
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)\.php
+RewriteRule ^ /%1 [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ views/$1.php [NC,L]
+   
+

@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+<style type="text/css">
+  input{
+    width: 80px;
+  }
+</style>
+<script language="javascript">
+
+function LTMD()
+{
+
+ 
+
+
+ var kwhpresent= document.getElementById('kwhpreset').value;
+ var kvarhpre=document.getElementById('kvarhpresent').value;
+ var kwpresent= document.getElementById('kwpresent').value;
+ 
+ 
+ 
+  var kwhpast= document.getElementById('kwhpast').value;
+ var kvarhpast=document.getElementById('kvarhpast').value;
+ var kwpast= document.getElementById('kwpast').value;
+
+var  fixc=document.getElementById('fixc').value;
+  
+  var kwh=kwhpresent-kwhpast;
+  var kvarh=kvarhpre-kvarhpast;
+  var kw=kwpresent-kwpast;
+   
+document.getElementById("unitkwh").value=kwh;
+document.getElementById("unitkvarh").value=kvarh;
+
+  
+  
+  
+  var kwp=(kwpast*85)/100;
+  var rkw;
+  var leftkw;
+  var fcharge;
+   var extracharge;
+   var finalcharge;
+   
+   if(kw<0)
+   {
+   
+      if(kwp < kwpresent)
+	  {
+	     rkw=kwpresent;
+	  }else
+	  {
+	    rkw=kwp;
+	  }
+  }
+  else
+  {
+  rkw= kwpresent-kw;
+    }
+  
+  
+  if(rkw<=40)
+  {
+     fcharge=rkw*90; 
+	 
+	// alert(fcharge);
+  }
+  else if(rkw<=60)
+  {
+    leftkw=rkw-40;
+	fcharge=(40*90) + (leftkw*130);
+	//alert(fcharge);
+  }
+  else
+  {
+    
+	var fkw=40*90;
+    var	skw=20*130;
+	var tkw=rkw-60;
+	var tk=tkw*195;
+	fcharge=fkw+skw+tk;
+	//alert(fcharge);
+
+  }
+   
+   var fch;
+  
+    if(kw>0)
+	{
+	  extracharge=kw*265;
+	  finalcharge=fcharge+extracharge;
+	  document.getElementById("fix").value=finalcharge.toFixed(2);
+	  fch=finalcharge;
+	} 
+   else
+   {
+    document.getElementById("fix").value=fcharge.toFixed(2);
+    fch=fcharge;
+   }
+   var e=kwh*4.60;
+    document.getElementById("eng").value=e.toFixed(2);
+	var r=kvarh*0.10;
+    document.getElementById("reactive").value=r.toFixed(2);
+  var f=kwh*fixc;
+    document.getElementById("fc").value=f.toFixed(2);
+	var en=document.getElementById("eng").value;
+	var fc1=document.getElementById("fc").value;
+   var total=parseInt(fch)+parseInt(en)+parseInt(fc1);
+         var ecd = parseInt(total)*0.10;
+    document.getElementById("electduty").value=ecd.toFixed(2);
+    var mcharge=document.getElementById("mcharge").value;
+	var lcharge=document.getElementById("lcharge").value;
+	
+	var ftotal=parseInt(fch)+parseInt(en)+parseInt(fc1)+parseInt(r)+parseInt(ecd)+parseInt(mcharge)+parseInt(lcharge);
+	document.getElementById("total").value=ftotal;
+	
+	
+	
+	var cr=document.getElementById("cr").value;
+	var db=document.getElementById("db").value;
+
+	  if(db==0)
+	  {
+	  
+	   document.getElementById("net").value=parseInt(ftotal)-parseInt(cr);
+	}else
+	{
+	
+	 document.getElementById("net").value=parseInt(ftotal)+parseInt(db);
+ }
+	
+
+}
+
+function CLEAN()
+{
+
+document.getElementById('kwhpreset').value="";
+document.getElementById('kvarhpresent').value=""
+ document.getElementById('kwpresent').value="";
+ 
+document.getElementById('kwhpast').value="";
+document.getElementById('kvarhpast').value="";
+document.getElementById('kwpast').value="";
+
+document.getElementById("unitkwh").value="";
+document.getElementById("unitkvarh").value="";
+document.getElementById("unitkw").value="";
+
+document.getElementById("fix").value="";
+document.getElementById("eng").value="";
+document.getElementById("reactive").value="";
+  document.getElementById("fc").value="";
+  document.getElementById("electduty").value="";
+  document.getElementById("total").value="";
+   document.getElementById("net").value="";
+   document.getElementById("cr").value="0";
+	var db=document.getElementById("db").value="0";
+	document.getElementById("lcharge").value="0";
+}
+
+</script>
+
+<body> 
+
+<form id="fRMLTMD" name="frmltmd" method="post" action="">
+<table width="350" border="1" bordercolordark="#000000" 
+ style="border:thick;background-color:#00FF66" >
+<tr>
+    <td colspan="3" align="center" bgcolor="#FF0000"><FONT style="font-size:18px;background-color:#3399FF;border:
+	#000000">MGVCL(LTMD BILLING)-MANJUSAR</FONT><BR />
+	CREATED BY:-LALIT B. PATEL
+	(JR.Asst)</td>
+  </tr>
+  <tr>
+    <td width="144">KWH</td>
+    <td width="144">KVARH</td>
+    <td width="102">MD</td>
+  </tr>
+  <tr>
+    <td height="55"><input name="kwhpreset" type="text" id="kwhpreset"  style="background-color:#FFFFCC" height="25"/></td>
+    <td>
+      <input name="kvarhpresent" type="text" id="kvarhpresent" style="background-color:#FFFFCC" height="25" />       </td>
+    <td>
+        <input name="kwpresent" type="text" id="kwpresent" style="background-color:#FFFFCC"  height="25" size=8/>
+        PRE.</td>
+  </tr>
+  <tr>
+    <td><input name="kwhpast" type="text" id="kwhpast" style="background-color:#00FFFF" height="25"/></td>
+    <td><input name="kvarhpast" type="text" id="kvarhpast" style="background-color:#00FFFF"  height="25"/></td>
+    <td><input name="kwpast" type="text" id="kwpast" style="background-color:#00FFFF" size=8  height="25"/>
+    PAST</td>
+  </tr>
+  <tr>
+    <td><input name="unitkwh" type="text" id="unitkwh"  value="" style="background-color:#FFFF00" /></td>
+    <td><input name="unitkvarh" type="text" id="unitkvarh" value="" style="background-color:#FFFF00" /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>FIX CHARGE </td>
+    <td colspan="2"><input name="fix" type="text" id="fix" /></td>
+  </tr>
+  <tr>
+    <td>ENG. CHARGE </td>
+    <td colspan="2"><input name="eng" type="text" id="eng" /></td>
+  </tr>
+  <tr>
+    <td>REACTIVE </td>
+    <td colspan="2"><input name="reactive" type="text" id="reactive" /></td>
+  </tr>
+  <tr>
+    <td>FULE CHARGE 
+      <input name="fixc" type="text" id="fixc" value="1.63"/></td>
+    <td colspan="2"><input name="reactive2" type="text" id="fc" /></td>
+  </tr>
+  <tr>
+    <td>ELECTRY DUTY </td>
+    <td colspan="2"><input name="electduty" type="text" id="electduty" /></td>
+  </tr>
+  <tr>
+    <td>METER CHARGE </td>
+    <td colspan="2"><input name="mcharge" type="text" id="mcharge" value="225"/></td>
+  </tr>
+  <tr>
+    <td>LATE CHARGE </td>
+    <td colspan="2"><input name="lcharge" type="text" id="lcharge"  value="0" height="25"/></td>
+  </tr>
+  <tr>
+   <tr>
+    <td>TOTAL</td>
+    <td colspan="2"><input name="pastpay" type="text" id="total" style="background-color:#FFFF00"  /></td>
+  </tr>
+    <td>PAST PAYMENT </td>
+    <td colspan="2"><input name="cr" type="text" id="cr" value="0"  style="background-color:#99FF99" height="25" />
+      CR
+        <input name="db" type="text" id="db" value="0" style="background-color:#FF6633"  height="25"/> 
+        DB </td>
+  </tr>
+ 
+   <tr>
+    <td>NET AMOUNT</td>
+    <td colspan="2"><input name="pastpay" type="text" id="net"  style="background-color:#FFFF00; font:Arial, Helvetica, sans-serif" /></td>
+  </tr>
+  <tr>
+  
+    <td colspan="3" align="center">
+
+        <input type="button" value="LTMD" onclick="LTMD()" style="background-color:#FF0000"/>
+		&nbsp; &nbsp;&nbsp;&nbsp;<input type="button" value="CLEAN" onclick="CLEAN()" style="background-color:#00CCFF"/>    </td>
+  </tr>
+</table>
+
+
+
+
+</form>
+ 
+
+</body>
+</html>
